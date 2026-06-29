@@ -1,0 +1,41 @@
+{
+  "task": "Task 9 \u2014 Hyperparameter Tuning",
+  "timestamp": "2026-06-29T07:23:18.241819",
+  "seed": 42,
+  "threshold": 0.29,
+  "search_strategy": "RandomizedSearchCV",
+  "n_iter": 30,
+  "cv_folds": 5,
+  "scoring_metric": "f1 (Hard class)",
+  "param_space": {
+    "classifier__n_estimators": "[50, 100, 150, 200, 300]",
+    "classifier__max_depth": "[5, 10, 15, 20, 30, None]",
+    "classifier__min_samples_leaf": "[1, 2, 5, 10, 20]",
+    "classifier__max_features": "['sqrt', 'log2', 0.5, 0.7]"
+  },
+  "best_params": {
+    "n_estimators": "50",
+    "min_samples_leaf": "5",
+    "max_features": "sqrt",
+    "max_depth": "5"
+  },
+  "best_cv_f1": 0.6592,
+  "default": {
+    "val_f1": 0.6842,
+    "test_f1": 0.6754,
+    "test_acc": 0.5875
+  },
+  "tuned": {
+    "val_f1": 0.6957,
+    "test_f1": 0.6985,
+    "test_acc": 0.5792,
+    "test_precision": 0.5528,
+    "test_recall": 0.9486
+  },
+  "gain": {
+    "val_f1": 0.0114,
+    "test_f1": 0.0231
+  },
+  "reproducibility_hash": "15d61a33db9fe73f17a62406aa0246fa33967e82c99c142aeb3b3becb8b5867b",
+  "note": "Test set was never used during search. CV scored on train folds only."
+}
